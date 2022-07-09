@@ -1,11 +1,13 @@
 package org.todoapp;
 
+import java.util.Objects;
+
 public class Person {
-    String firstName;
     int id;
+    String firstName;
     String lastName;
     String email;
-
+    private AppUser credentials;
     public int getId() {
         return id;
     }
@@ -37,12 +39,34 @@ public class Person {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
-    public String getSummary() {
-        return "Person {" + "firstName='" + firstName
-                + '\'' + ", id=" + id + ", lastName='" + lastName
-                + '\'' + ", email='" + email
-                + '\''
-                + '}';
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
+
+    public AppUser getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
     }
 }

@@ -1,6 +1,7 @@
 package org.todoapp;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
     int id;
@@ -67,11 +68,27 @@ public class TodoItem {
 
     }
 
+    @Override
     public String toString() {
-        return "TodoItemTask{" + "id=" + id + ", creator=" + creator + ", title='" + title
-                + '\'' + ", deadLine=" + deadLine + ", taskDescription='" + taskDescription
-                + '\'' + ", done=" + done
-                + '}';
+        return "TodoItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", deadLine=" + deadLine +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", done=" + done +
+                '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItem todoItem = (TodoItem) o;
+        return id == todoItem.id && done == todoItem.done && Objects.equals(title, todoItem.title) && Objects.equals(deadLine, todoItem.deadLine) && Objects.equals(taskDescription, todoItem.taskDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, deadLine, taskDescription, done);
+    }
 }
