@@ -60,7 +60,7 @@ public class TodoItem {
     }
 
     public boolean isOverdue() {
-        if (this.deadLine.isAfter(LocalDate.now())) {
+        if (this.deadLine.isBefore(LocalDate.now())) {
             return true;
         } else {
             return false;
