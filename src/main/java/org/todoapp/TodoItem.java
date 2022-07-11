@@ -11,6 +11,14 @@ public class TodoItem {
     String taskDescription;
     boolean done;
 
+    public TodoItem() {
+    }
+
+    public TodoItem(String title, LocalDate date) {
+        this.title = title;
+        this.deadLine = date;
+    }
+
     public int getId() {
         return id;
     }
