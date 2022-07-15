@@ -1,9 +1,16 @@
 package org.todoapp.model;
 
+import org.todoapp.sequencers.PersonIdSequencer;
+
 import java.util.Objects;
 
 public class Person {
     int id;
+
+    public Person() {
+        this.id = PersonIdSequencer.nextId();
+    }
+
     String firstName;
     String lastName;
     String email;

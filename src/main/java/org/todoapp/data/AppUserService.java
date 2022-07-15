@@ -1,4 +1,4 @@
-package org.todoapp.dao;
+package org.todoapp.data;
 
 import org.todoapp.model.AppUser;
 
@@ -25,7 +25,7 @@ public class AppUserService implements AppUserDAO{
 
     @Override
     public Collection<AppUser> findAll() {
-        return (Collection<AppUser>) userMap;
+        return userMap.values();
     }
 
     @Override
