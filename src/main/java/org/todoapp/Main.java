@@ -24,6 +24,6 @@ public class Main {
         AppUser usr = new AppUser();
         p.setCredentials(usr);
         System.out.println(tdTask);
-        System.out.println(p + " " + p.getCredentials().toString());
+        System.out.println(p + " " + p.getCredentials());
     }
 }
