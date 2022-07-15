@@ -1,6 +1,7 @@
 package org.todoapp;
 
 import org.junit.jupiter.api.Test;
+import org.todoapp.model.TodoItem;
 
 import java.time.LocalDate;
 import java.util.Objects;

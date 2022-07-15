@@ -1,5 +1,10 @@
 package org.todoapp;
 
+import org.todoapp.model.AppUser;
+import org.todoapp.model.Person;
+import org.todoapp.model.TodoItem;
+import org.todoapp.model.TodoItemTask;
+
 import java.time.LocalDate;
 
 public class Main {
